@@ -1,5 +1,6 @@
 import { use, useEffect, useState } from "react";
-import Title from "../components/Title";
+import BookTitle from "../components/BookTitle";
+import FilmTitle from "../components/FilmTitle";
 
 export default function Home (){
 
@@ -32,13 +33,15 @@ export default function Home (){
 
     useEffect(getData, [])
 
+    
+
     return(
         <main>
             <div className="mb-10 mt-4">
                 <h2 className="text-3xl">Books</h2>
                 {books.map(function(book){
                     return (
-                        <Title titleName={book.name} key={book._id} />
+                        <BookTitle titleName={book.name} bookKey={book._id} />
                     )
                 })}
             </div>
@@ -46,7 +49,7 @@ export default function Home (){
                 <h2 className="text-3xl">Films and TV</h2>
                 {films.map(function(film){
                     return (
-                        <Title titleName={film.name} key={film._id} />
+                        <FilmTitle titleName={film.name} filmKey={film._id} />
                     )
                 })}
             </div>
